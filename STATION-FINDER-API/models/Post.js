@@ -16,6 +16,16 @@ const PostSchema = new mongoose.Schema(
         likes: {
             type: Array,
             default: []
+        },
+        ratings: [
+            {
+                star: Number,
+                postedby: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+            },
+        ],
+        totalrating: {
+            type: String,
+            default: 0,
         }
     },
     { timestamps: true }

@@ -2,11 +2,12 @@ import React, { useContext, useRef } from 'react';
 import { loginCall } from '../apiCalls';
 import { AuthContext } from "../context/AuthContext";
 import LinearProgress from '@mui/material/LinearProgress';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
     const email = useRef();
     const password = useRef();
-    const { user, isFetching, err, dispatch } = useContext(AuthContext)
+    const { user, isFetching, error, dispatch } = useContext(AuthContext)
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -40,9 +41,11 @@ export default function Login() {
                         />
                         <button className="h-[50px] bg-[black] text-[whitesmoke] text-xl font-medium cursor-pointer rounded-[10px] disabled:cursor-not-allowed" type='submit' disabled={isFetching}>{isFetching ? <LinearProgress /> : "Check In"}</button>
                         <span className='text-center text-[black]'>Forgot Password?</span>
-                        <button className="h-[50px] bg-[grey] text-[#6B41CF] text-xl font-medium cursor-pointer rounded-[10px] disabled:cursor-not-allowed" disabled={isFetching}>
-                            {isFetching ? <LinearProgress /> : "New? Join the Community"}
-                        </button>
+                        <Link to="/register">
+                            <button className="h-[50px] w-full bg-[grey] text-[#6B41CF] text-xl font-medium cursor-pointer rounded-[10px] disabled:cursor-not-allowed" disabled={isFetching}>
+                                {isFetching ? <LinearProgress /> : "New? Join the Community"}
+                            </button>
+                        </Link>
                     </form>
                 </div>
             </div>

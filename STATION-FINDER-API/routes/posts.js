@@ -102,6 +102,7 @@ router.get("/profile/:username", async (req, res) => {
 
 
 
+
 // router.get('/timeline/all', async (req, res) => {
 //     try {
 //         const { userId } = req.query;

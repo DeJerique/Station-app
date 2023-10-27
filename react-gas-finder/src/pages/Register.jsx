@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef } from "react";
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function Register() {
@@ -23,7 +23,7 @@ export default function Register() {
                 password: password.current.value,
             }
             try {
-                await axios.post("http://localhost:8800/api/auth/register", user);
+                await axios.post("/auth/register", user);
                 navigate('/login');
             } catch (err) {
                 console.log(err);
@@ -74,7 +74,9 @@ export default function Register() {
                             minLength={6}
                         />
                         <button className="h-[50px] bg-[black] text-[whitesmoke] text-xl font-medium cursor-pointer rounded-[10px]" type="submit">Join the Community</button>
-                        <button className="h-[50px] bg-[grey] text-[#6B41CF] text-xl font-medium cursor-pointer rounded-[10px]">Member? Check in</button>
+                        <Link to="/login">
+                            <button className="h-[50px] w-full bg-[grey] text-[#6B41CF] text-xl font-medium cursor-pointer rounded-[10px]">Member? Check in</button>
+                        </Link>
                     </form>
                 </div>
             </div>

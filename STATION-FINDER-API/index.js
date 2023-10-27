@@ -24,7 +24,7 @@ const db = mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log('Connected To DB'));
 
-app.use(express.static("public/images"));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 // Middlewares
 app.use(cors());
@@ -37,11 +37,11 @@ const storage = multer.diskStorage({
         cb(null, "public/images");
     },
     filename: (req, file, cb) => {
-        cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname));
+        cb(null, req.body.name);
     }
 });
 
-const upload = multer({ storage: storage, limits: { fileSize: 3000000 } });
+const upload = multer({ storage });
 
 app.post('/api/upload', upload.single('file'), (req, res) => {
     try {

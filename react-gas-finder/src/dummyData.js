@@ -1,52 +1,52 @@
 export const Users = [
     {
         id: 1,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "Omni Johnson",
     },
     {
         id: 2,
-        profilePicture: "/assets/persons/realcurate2_pic.jpg",
+        profilePicture: "person/realcurate2_pic.jpg",
         username: "John Anosike",
     },
     {
         id: 3,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "Elon Musk",
     },
     {
         id: 4,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "Stallion James",
     },
     {
         id: 5,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "Adoni Creed",
     },
     {
         id: 6,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "LeBron James",
     },
     {
         id: 7,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "Culprit Man",
     },
     {
         id: 8,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "John Wick",
     },
     {
         id: 9,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "Mason James",
     },
     {
         id: 10,
-        profilePicture: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        profilePicture: "person/205128_adapted_landscape_2560x2560.jpg",
         username: "Jonny Creed",
     },
 ];
@@ -55,7 +55,7 @@ export const Posts = [
     {
         id: 1,
         desc: "Una dey craze",
-        photo: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        photo: "person/205128_adapted_landscape_2560x2560.jpg",
         date: "2000 mins ago",
         userId: 1,
         like: 32,
@@ -64,7 +64,7 @@ export const Posts = [
     {
         id: 2,
         desc: "Make una no vex",
-        photo: "/assets/persons/58824-black-hacker-wallpaper-top-free-black-hacker-background.jpg",
+        photo: "person/58824-black-hacker-wallpaper-top-free-black-hacker-background.jpg",
         date: "15 mins ago",
         userId: 2,
         like: 10000000,
@@ -73,7 +73,7 @@ export const Posts = [
     {
         id: 3,
         desc: "sorry na",
-        photo: "/assets/persons/icons8-like-94.png",
+        photo: "person/icons8-like-94.png",
         date: "18.5 mins ago",
         userId: 3,
         like: 32,
@@ -82,7 +82,7 @@ export const Posts = [
     {
         id: 4,
         desc: "hey peeps i jus wan greet",
-        photo: "/assets/persons/realcurate2_pic.jpg",
+        photo: "person/realcurate2_pic.jpg",
         date: "1500 mins ago",
         userId: 4,
         like: 332,
@@ -91,7 +91,7 @@ export const Posts = [
     {
         id: 5,
         desc: "No Wam",
-        photo: "/assets/persons/Monkey With Headset.jpg",
+        photo: "person/Monkey With Headset.jpg",
         date: "5 yrs ago",
         userId: 5,
         like: 32,
@@ -100,7 +100,7 @@ export const Posts = [
     {
         id: 6,
         desc: "Una dey craze",
-        photo: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        photo: "person/205128_adapted_landscape_2560x2560.jpg",
         date: "15 mins ago",
         userId: 6,
         like: 32,
@@ -109,7 +109,7 @@ export const Posts = [
     {
         id: 7,
         desc: "Una dey craze",
-        photo: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        photo: "person/205128_adapted_landscape_2560x2560.jpg",
         date: "15 mins ago",
         userId: 7,
         like: 32,
@@ -118,7 +118,7 @@ export const Posts = [
     {
         id: 8,
         desc: "Una dey craze",
-        photo: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        photo: "person/205128_adapted_landscape_2560x2560.jpg",
         date: "15 mins ago",
         userId: 8,
         like: 32,
@@ -127,7 +127,7 @@ export const Posts = [
     {
         id: 9,
         desc: "Una dey craze",
-        photo: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        photo: "person/205128_adapted_landscape_2560x2560.jpg",
         date: "15 mins ago",
         userId: 9,
         like: 32,
@@ -136,7 +136,7 @@ export const Posts = [
     {
         id: 10,
         desc: "Una dey craze",
-        photo: "/assets/persons/205128_adapted_landscape_2560x2560.jpg",
+        photo: "person/205128_adapted_landscape_2560x2560.jpg",
         date: "15 mins ago",
         userId: 10,
         like: 32,

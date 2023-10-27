@@ -7,7 +7,7 @@ export default function Topbar() {
 
 
     const { user } = useContext(AuthContext)
-    // const 
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <div className=' bg-fos h-[50px] w-full flex items-center sticky z-[999] top-0'>
             <div className="flex-[3]">
@@ -41,7 +41,7 @@ export default function Topbar() {
                     </div>
                 </div>
                 <Link to={`profile/${user.username}`}>
-                    <img src={user.profilePicture ? user.profilePicture : "/assets/persons/no-avatar.png"} alt="" className="w-8 h-8 object-cover cursor-pointer rounded-[50%]" />
+                    <img src={user.profilePicture ? PF + user.profilePicture : PF+"person/no-avatar.png"} alt="Profile" className="w-8 h-8 object-cover cursor-pointer rounded-[50%]" />
                 </Link>
             </div>
         </div>

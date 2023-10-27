@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
 export default function Rightbar({ user }) {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const [friends, setFriends] = useState([]);
     const { user: currentUser, dispatch } = useContext(AuthContext);
     const [followed, setFollowed] = useState(currentUser.followings.includes(user?.id));
@@ -16,7 +17,7 @@ export default function Rightbar({ user }) {
     useEffect(() => {
         const getFriends = async () => {
             try {
-                const friendList = await axios.get("http://localhost:8800/api/users/friends/" + user._id)
+                const friendList = await axios.get("/users/friends/" + user._id)
                 setFriends(friendList.data);
             } catch (err) {
                 console.log(err);
@@ -28,10 +29,10 @@ export default function Rightbar({ user }) {
     const followHandler = async () => {
         try {
             if (followed) {
-                await axios.put("http://localhost:8800/api/users/" + user._id + "/unfollow", { userId: currentUser._id });
+                await axios.put("/users/" + user._id + "/unfollow", { userId: currentUser._id });
                 dispatch({ type: "UNFOLLOW", payload: user._id })
             } else {
-                await axios.put("http://localhost:8800/api/users/" + user._id + "/follow", { userId: currentUser._id });
+                await axios.put("/users/" + user._id + "/follow", { userId: currentUser._id });
                 dispatch({ type: "FOLLOW", payload: user._id })
             }
         } catch (err) {
@@ -46,10 +47,10 @@ export default function Rightbar({ user }) {
         return (
             <>
                 <div className="flex items-center">
-                    <img src="/assets/persons/_4c85bc61-196e-4668-9ab2-cc28f503487b.jpeg" alt="" className='w-10 h-10 mr-5' />
+                    <img src={PF + "/person/_4c85bc61-196e-4668-9ab2-cc28f503487b.jpeg"} alt="" className='w-10 h-10 mr-5' />
                     <span><b>Emmy Willie </b>and <b>three others</b> Have a birthday today.</span>
                 </div>
-                <img src="/assets/persons/IMG_20220828_171122_800.jpg" alt="" className='w-full mx-0 my-[30px] rounded-[10px]' />
+                <img src={PF + "/person/IMG_20220828_171122_800.jpg"} alt="" className='w-full mx-0 my-[30px] rounded-[10px]' />
                 <h4 className="mb-5 font-[650]">e-Comrades</h4>
                 <ul className="m-0 p-0">
                     {Users.map(u => (
@@ -92,7 +93,7 @@ export default function Rightbar({ user }) {
                     {friends.map(friend => (
                         <Link to={"/profile/" + friend.username}>
                             <div className="flex flex-col cursor-pointer mb-5">
-                                <img src={friend.profilePicture ? friend.profilePicture : "public/assets/persons/no-avatar.png"} alt="" className=" w-[100px] h-[100px] object-cover rounded-[5px]" />
+                                <img src={friend.profilePicture ? PF + friend.profilePicture : PF+"person/no-avatar.png"} alt="" className=" w-[100px] h-[100px] object-cover rounded-[5px]" />
                                 <span className="rightbarFollowingName">{friend.username}</span>
                             </div>
                         </Link>

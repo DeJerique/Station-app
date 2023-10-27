@@ -11,6 +11,7 @@ export default function Post({ post }) {
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const [user, setUser] = useState({});
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const { user: currentUser } = useContext(AuthContext);
 
     useEffect(() => {
@@ -19,7 +20,7 @@ export default function Post({ post }) {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`http://localhost:8800/api/users?userId=${post.userId}`);
+            const res = await axios.get(`/users?userId=${post.userId}`);
             setUser(res.data)
         };
         fetchUser();
@@ -40,7 +41,7 @@ export default function Post({ post }) {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
                         <Link to={`profile/${user.username}`}>
-                            <img src={user.profilePicture ? user.profilePicture : "assets/persons/no-avatar.png"} alt='' className='w-8 h-8 object-cover rounded-[50%]' />
+                            <img src={user.profilePicture ? PF + user.profilePicture : PF + "person/no-avatar.png"} alt='' className='w-8 h-8 object-cover rounded-[50%]' />
                         </Link>
                         <span className='text-[20px] font-[650] mx-2.5 my-0'>{user.username}</span>
                         <span className='text-[15px]'>{moment(post.createdAt).fromNow()}</span>
@@ -51,12 +52,12 @@ export default function Post({ post }) {
                 </div>
                 <div className="mx-0 my-5">
                     <span className='postText'>{post?.desc}</span>
-                    <img src={post.img} alt="" className='w-full max-h-[500px] object-contain mt-5' />
+                    <img src={PF + post.img} alt="" className='w-full max-h-[500px] object-contain mt-5' />
                 </div>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
                         {/* <img src="/assets/persons/icons8-like-94.png" onClick={likeHandler} alt="" className='w-[27px] h-[27px] cursor-pointer mr-[5px]' /> */}
-                        <img src="/assets/persons/icons8-like-64.png" onClick={likeHandler} alt="" className='w-[27px] h-[27px] cursor-pointer mr-[5px]' />
+                        <img src={`${PF}person/icons8-like-64.png`} onClick={likeHandler} alt="" className='w-[27px] h-[27px] cursor-pointer mr-[5px]' />
                         <span className="text-[16px] font-[650]">{like} People liked it</span>
                     </div>
                     <div className="postBottomRight">
