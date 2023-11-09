@@ -17,7 +17,7 @@ const INITIAL_STATE = {
         from: "Pluto",
         city: "Pluto Nation"
     },
-    null,
+    // null,
     isFetching: false,
     error: false
 };
