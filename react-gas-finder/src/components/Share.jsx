@@ -30,7 +30,7 @@ export default function Share() {
         // }
 
         try {
-            await axios.post("/posts", newPost);
+            await axios.post("http://localhost:8800/api/posts", newPost);
             window.location.reload()
         } catch (err) {
             console.log(err);
